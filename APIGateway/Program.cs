@@ -21,6 +21,9 @@ namespace APIGateway
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                }).ConfigureAppConfiguration((hosting, config) =>
+                {
+                    config.AddJsonFile("ocelot.json", false, true);
                 });
     }
 }
