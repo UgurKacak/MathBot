@@ -46,3 +46,8 @@ C:\Users\Bee\source\repos\MathBot\UserAPI\bin\Debug\net5.0\Microsoft.IdentityMod
 C:\Users\Bee\source\repos\MathBot\UserAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Bee\source\repos\MathBot\UserAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Bee\source\repos\MathBot\UserAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Bee\source\repos\MathBot\UserAPI\bin\Debug\net5.0\published\web.config
+C:\Users\Bee\source\repos\MathBot\UserAPI\bin\Debug\net5.0\published\appsettings.Development.json
+C:\Users\Bee\source\repos\MathBot\UserAPI\bin\Debug\net5.0\published\appsettings.json
+C:\Users\Bee\source\repos\MathBot\UserAPI\bin\Debug\net5.0\published\UserAPI.deps.json
+C:\Users\Bee\source\repos\MathBot\UserAPI\bin\Debug\net5.0\published\UserAPI.runtimeconfig.json

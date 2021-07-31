@@ -1,3 +1,5 @@
 .vs
 .history
 /web-app/node_modules
+/*/published
+/*/bin

@@ -2,7 +2,7 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/auths",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -14,7 +14,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/users",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -30,7 +30,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/users/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -46,7 +46,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/users",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -58,7 +58,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/questions",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -74,6 +74,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:1000"
+    "BaseUrl": "http://localhost:1000"
   }
 }

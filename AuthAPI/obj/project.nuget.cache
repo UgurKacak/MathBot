@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MKgquIw1rXwjo0uPuLexljNvIbzIB28d3b6SayTeB82zR+1GInFzFUyO/MZfewKi7Zb8qX75fgqhpfrcu+jLcw==",
+  "dgSpecHash": "9YOFHMw2HtRGmEuVcodoAETDnR1OlB4wofAln1mYoyKnMvLGFXSCvD1FDJaUtAAuMzPOdoQhQkTaEoBv+aRueg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bee\\source\\repos\\MathBot\\AuthAPI\\AuthAPI.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Bee\\.nuget\\packages\\microsoft.identitymodel.logging\\6.12.0\\microsoft.identitymodel.logging.6.12.0.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.12.0\\microsoft.identitymodel.tokens.6.12.0.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\Bee\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\mongodb.bson\\2.13.0\\mongodb.bson.2.13.0.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\mongodb.driver\\2.13.0\\mongodb.driver.2.13.0.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\mongodb.driver.core\\2.13.0\\mongodb.driver.core.2.13.0.nupkg.sha512",

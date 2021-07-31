@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oXlTTRXqB2ag5BS7o4Zs0g9ESuV723uWNFbjN6trhv6A16QDGFBe8vpQ+oj1TCJlPUHCPCwxfZngCfUUo8dO4A==",
+  "dgSpecHash": "3CwY/+NK9Kozpkp6+RylzRwnwVVjzxOAVkgyjSL3L9JvqeeUml4ANFPEPCKx7bv3I9j7X5iKhi2R8ugl5ENlKg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bee\\source\\repos\\MathBot\\QuestionConsumer\\QuestionConsumer.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\Bee\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.11\\microsoft.extensions.primitives.3.1.11.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Bee\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\mongodb.bson\\2.13.0\\mongodb.bson.2.13.0.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\mongodb.driver\\2.13.0\\mongodb.driver.2.13.0.nupkg.sha512",

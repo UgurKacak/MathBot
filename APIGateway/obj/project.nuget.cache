@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NaPfo/5tYNCJE+xKWKdMDZCA8jelo2LgbfSkYeu7m2lbQa2NfsFKN/HV0vpvnYp2ZuqitHXb5Sz/Y4X3TRsJ2Q==",
+  "dgSpecHash": "esZ7nkWBseP/2gi4qdAI2ngMRhdsd2xWZ2KWzP77Xi741ynqPcmzYqsSU+3Y2H1oSiSToYg5HCnRJp/KREhvng==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bee\\source\\repos\\MathBot\\APIGateway\\APIGateway.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\Bee\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.7.1\\microsoft.identitymodel.protocols.6.7.1.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.7.1\\microsoft.identitymodel.protocols.openidconnect.6.7.1.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.12.0\\microsoft.identitymodel.tokens.6.12.0.nupkg.sha512",
+    "C:\\Users\\Bee\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Bee\\.nuget\\packages\\ocelot\\17.0.0\\ocelot.17.0.0.nupkg.sha512",

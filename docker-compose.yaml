@@ -8,6 +8,8 @@ services:
       - 27017:27017
     volumes: 
       - mongodbdata:/data/db
+    expose:
+     - 27017
   rabbitmq: 
     image: rabbitmq:management
     container_name: rabbitmq
@@ -17,6 +19,65 @@ services:
     volumes:
       - rabbitmqdata:/var/lib/rabbitmq
     hostname: rabbitmq
+    expose:
+     - 15672
+     - 5672
+  apigateway:
+    build:
+      context: .
+      dockerfile: APIGateway/Dockerfile
+    ports:
+      - 1000:1000
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+    - ASPNETCORE_URLS=http://+:80
+  authapi:
+    build:
+      context: .
+      dockerfile: AuthAPI/Dockerfile
+    ports:
+      - 2000:2000
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+    - ASPNETCORE_URLS=http://+:80
+  userapi:
+    build:
+      context: .
+      dockerfile: UserAPI/Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+    - ASPNETCORE_URLS=http://+:80
+  questionapi:
+    build:
+      context: .
+      dockerfile: QuestionAPI/Dockerfile
+    ports:
+      - 4000:4000
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+    - ASPNETCORE_URLS=http://+:80
+  questionconsumer:
+    build:
+      context: .
+      dockerfile: QuestionConsumer/Dockerfile
+    ports:
+      - 5000:5000
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+    - ASPNETCORE_URLS=http://+:80
+  webapp:
+    build: ./web-app
+    volumes:
+      - './:/app'
+      - '/app/node_modules'
+    ports:
+      - 3005:3005
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: yarn start
 volumes: 
   mongodbdata:
   rabbitmqdata:
