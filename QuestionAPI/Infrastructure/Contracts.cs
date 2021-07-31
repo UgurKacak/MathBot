@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public record QuestionCreated(Guid Id, Guid UserId, string Expression, string Result, DateTimeOffset CreatedOn);
+    public record QuestionCreated(Guid Id, Guid UserId,string UserName, string Expression, string Result, DateTimeOffset CreatedOn);
 }

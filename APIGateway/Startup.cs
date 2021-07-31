@@ -48,6 +48,12 @@ namespace APIGateway
                         RequireExpirationTime = true
                     };
                 });
+            services.AddCors(o => o.AddPolicy("LowCorsPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
             services.AddControllers();
             services.AddOcelot();
         }
@@ -59,7 +65,7 @@ namespace APIGateway
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("LowCorsPolicy");
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

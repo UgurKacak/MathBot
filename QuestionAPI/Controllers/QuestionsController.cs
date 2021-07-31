@@ -50,6 +50,7 @@ namespace QuestionAPI.Controllers
                 var question = new Question
                 {
                     UserId = createQuestionDto.UserId,
+                    UserName = createQuestionDto.UserName,
                     Expression = createQuestionDto.Expression,
                     Result = createQuestionDto.Result,
                     CreatedOn = DateTimeOffset.UtcNow
@@ -57,7 +58,7 @@ namespace QuestionAPI.Controllers
 
                 await repository.CreateAsync(question);
 
-                await publishEndpoint.Publish(new QuestionCreated(question.Id, question.UserId, question.Expression, question.Result, question.CreatedOn));
+                await publishEndpoint.Publish(new QuestionCreated(question.Id, question.UserId, question.UserName, question.Expression, question.Result, question.CreatedOn));
 
                 return CreatedAtAction(nameof(GetByIdAsync), new { id = question.Id }, question);
             }
@@ -73,6 +74,7 @@ namespace QuestionAPI.Controllers
                 }
 
                 existingQuestion.UserId = updateQuestionDto.UserId;
+                existingQuestion.UserName = updateQuestionDto.UserName;
                 existingQuestion.Expression = updateQuestionDto.Expression;
                 existingQuestion.Result = updateQuestionDto.Result;
                 existingQuestion.ModifiedOn = DateTimeOffset.UtcNow;

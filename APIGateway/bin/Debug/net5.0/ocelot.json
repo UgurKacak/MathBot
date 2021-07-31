@@ -10,7 +10,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/auths",
-      "UpstreamHttpMethod": ["Post"]
+      "UpstreamHttpMethod": [ "Post" ]
     },
     {
       "DownstreamPathTemplate": "/api/users",
@@ -22,7 +22,23 @@
         }
       ],
       "UpstreamPathTemplate": "/api/users",
-      "UpstreamHttpMethod": ["Get", "Put", "Delete"],
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/users/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 3000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/users/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "TestKey",
         "AllowedScopes": []
@@ -38,7 +54,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/users",
-      "UpstreamHttpMethod": ["Post"]
+      "UpstreamHttpMethod": [ "Post" ]
     },
     {
       "DownstreamPathTemplate": "/api/questions",

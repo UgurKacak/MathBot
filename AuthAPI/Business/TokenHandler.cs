@@ -11,7 +11,7 @@ namespace AuthAPI.Business
     public static class TokenHandler
     {
         public static IConfiguration _configuration;
-        public static dynamic CreateAccessToken(Guid userId)
+        public static dynamic CreateAccessToken(Guid userId, string userName)
         {
             SymmetricSecurityKey symmetricSecurityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JWT:Security"]));
             TokenValidationParameters tokenValidationParameters = new TokenValidationParameters
@@ -34,14 +34,15 @@ namespace AuthAPI.Business
                       new Claim(ClaimTypes.Name, userId.ToString())
                      },
                      notBefore: now,
-                     expires: now.Add(TimeSpan.FromMinutes(2)),
+                     expires: now.Add(TimeSpan.FromMinutes(60)),
                      signingCredentials: new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256)
                  );
             return new
             {
+                UserName = userName,
                 UserId = userId, 
                 AccessToken = new JwtSecurityTokenHandler().WriteToken(jwt),
-                Expires = TimeSpan.FromMinutes(2).TotalSeconds
+                Expires = TimeSpan.FromMinutes(60).TotalSeconds
             };
         }
     }

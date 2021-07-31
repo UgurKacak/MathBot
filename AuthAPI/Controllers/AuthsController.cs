@@ -46,7 +46,7 @@ namespace AuthAPI.Controllers
             }
 
             TokenHandler._configuration = _configuration;
-            return Ok(TokenHandler.CreateAccessToken(existingUser.Id));
+            return Ok(TokenHandler.CreateAccessToken(existingUser.Id, existingUser.UserName));
 
         }
 

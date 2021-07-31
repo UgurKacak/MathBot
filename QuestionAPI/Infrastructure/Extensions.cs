@@ -8,7 +8,7 @@ namespace QuestionAPI.Infrastructure
     {
         public static QuestionDto AsDto(this Question question)
         {
-            return new QuestionDto(question.Id, question.UserId, question.Expression, question.Result, question.CreatedOn, question.ModifiedOn);
+            return new QuestionDto(question.Id, question.UserId,question.UserName, question.Expression, question.Result, question.CreatedOn, question.ModifiedOn);
         }
     }
 }

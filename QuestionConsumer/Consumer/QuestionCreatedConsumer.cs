@@ -36,13 +36,14 @@ namespace QuestionConsumer.Consumer
             {
                 Id = message.Id,
                 UserId = message.UserId,
+                UserName = message.UserName,
                 Expression = message.Expression,
                 Result = actualResult,
                 CreatedOn = message.CreatedOn,
                 ModifiedOn = DateTimeOffset.UtcNow
             };
 
-            Console.WriteLine("Question Created -> " + message.Expression + " = " + eResult.ToString());
+            Console.WriteLine("Question Created -> " + message.Expression + " = " + actualResult);
             Console.WriteLine("Synthetic 10sec waiting before update.");
             Task.Delay(10000).Wait();
 
