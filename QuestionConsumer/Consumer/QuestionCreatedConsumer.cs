@@ -20,15 +20,24 @@ namespace QuestionConsumer.Consumer
 
             var message = context.Message;
 
+            String actualResult = "";
 
-            double eResult = Convert.ToDouble(new DataTable().Compute(message.Expression, null));
+            try
+            {
+                double eResult = Convert.ToDouble(new DataTable().Compute(message.Expression, null));
+                actualResult = eResult.ToString();
+            }
+            catch (Exception e)
+            {
+                actualResult = e.Message;
+            }
 
             var question = new Question
             {
                 Id = message.Id,
                 UserId = message.UserId,
                 Expression = message.Expression,
-                Result = eResult.ToString(),
+                Result = actualResult,
                 CreatedOn = message.CreatedOn,
                 ModifiedOn = DateTimeOffset.UtcNow
             };
