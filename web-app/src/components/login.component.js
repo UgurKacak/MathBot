@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import ReactFullPageLoading from 'react-fullpage-loading';
 const Login = () => {
 	let history = useHistory();
 	const [userName, setUserName] = useState("");
 	const [password, setPassword] = useState("");
 	const [alert, setAlert] = useState("");
+	const [loading, setLoading] = useState(false);
 	const LoginHandler = () => {
 		setAlert("");
 		const bodyParameters = {
@@ -13,26 +15,31 @@ const Login = () => {
 			Password: password
 		};
 
+		setLoading(true);
 		axios
-			.post("https://localhost:1000/api/auths", bodyParameters)
+			.post("http://localhost:1000/api/auths", bodyParameters)
 			.then((response) => {
 				console.log(response.data);
 				localStorage.setItem("token", response.data.accessToken);
 				localStorage.setItem("userId", response.data.userId);
 				localStorage.setItem("userName", response.data.userName);
+				setLoading(false);
 				history.push("/home");
+				
 			})
 			.catch((err) => {
-				debugger;
 				if (err.response.data.title !== undefined) {
 					setAlert(err.response.data.title);
+					setLoading(false);
 				} else {
 					setAlert(err.response.data);
+					setLoading(false);
 				}
 			});
 	};
 	return (
 		<div className="outer">
+			{loading ? <ReactFullPageLoading /> : null}
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<a className="navbar-brand">
 					MathBot

@@ -3,12 +3,14 @@ import MaterialTable from "material-table";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
+import ReactFullPageLoading from 'react-fullpage-loading';
 const Home = () => {
 	const [data, setData] = useState([]);
 	const [expression, setExpression] = useState([]);
 	const [dummyLoad, setDummyLoad] = useState(0);
 	const [userData, setUserData] = useState({});
 	const [show, setShow] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	const handleClose = () => setShow(false);
 	const handleShow = async (userId) => {
@@ -22,8 +24,9 @@ const Home = () => {
 				Authorization: `Bearer ${localStorage.getItem("token")}`
 			}
 		};
+		setLoading(true);
 		axios
-			.get("https://localhost:1000/api/questions", config)
+			.get("http://localhost:1000/api/questions", config)
 			.then((response) => {
 				// If request is good...
 				let xData = response.data;
@@ -33,9 +36,11 @@ const Home = () => {
 					return d - c;
 				});
 				setData(xData);
+				setLoading(false);
 			})
 			.catch((error) => {
 				console.log("error " + error);
+				setLoading(false);
 			});
 	}, [dummyLoad]);
 	const questionSendHandler = () => {
@@ -50,14 +55,16 @@ const Home = () => {
 			UserName: localStorage.getItem("userName"),
 			Expression: expression
 		};
+		setLoading(true);
 		axios
-			.post("https://localhost:1000/api/questions", bodyParameters, config)
+			.post("http://localhost:1000/api/questions", bodyParameters, config)
 			.then((response) => {
 				setDummyLoad(dummyLoad + 1);
 			})
 			.catch((err) => {
 				console.log(err);
 			});
+			setLoading(false);
 	};
 
 	const getUserDetails = (userId) => {
@@ -66,13 +73,16 @@ const Home = () => {
 				Authorization: `Bearer ${localStorage.getItem("token")}`
 			}
 		};
+		setLoading(true);
 		axios
-			.get("https://localhost:1000/api/users/" + userId, config)
+			.get("http://localhost:1000/api/users/" + userId, config)
 			.then((response) => {
 				setUserData(response.data);
+				setLoading(false);
 			})
 			.catch((error) => {
 				return "An error occurred";
+				setLoading(false);
 			});
 	};
 
@@ -82,6 +92,7 @@ const Home = () => {
 	};
 	return (
 		<div>
+			{loading ? <ReactFullPageLoading /> : null}
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<a class="navbar-brand">MathBot</a>
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">

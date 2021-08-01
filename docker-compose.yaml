@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 
 services: 
   mongo:
@@ -8,8 +8,7 @@ services:
       - 27017:27017
     volumes: 
       - mongodbdata:/data/db
-    expose:
-     - 27017
+    hostname: mongohost
   rabbitmq: 
     image: rabbitmq:management
     container_name: rabbitmq
@@ -18,55 +17,69 @@ services:
       - 15672:15672
     volumes:
       - rabbitmqdata:/var/lib/rabbitmq
-    hostname: rabbitmq
-    expose:
-     - 15672
-     - 5672
+    hostname: rabbitmqhost
+    healthcheck:
+      test: [ "CMD", "rabbitmqctl", "status"]
+      interval: 5s
+      timeout: 20s
+      retries: 5
   apigateway:
     build:
       context: .
       dockerfile: APIGateway/Dockerfile
     ports:
-      - 1000:1000
+      - 1000:80
     environment:
     - ASPNETCORE_ENVIRONMENT=Development
     - ASPNETCORE_URLS=http://+:80
+      - 1000
+    hostname: apigatewayhost
   authapi:
     build:
       context: .
       dockerfile: AuthAPI/Dockerfile
     ports:
-      - 2000:2000
+      - 2000:80
     environment:
     - ASPNETCORE_ENVIRONMENT=Development
     - ASPNETCORE_URLS=http://+:80
+    hostname: authapihost
   userapi:
     build:
       context: .
       dockerfile: UserAPI/Dockerfile
     ports:
-      - 3000:3000
+      - 3000:80
     environment:
     - ASPNETCORE_ENVIRONMENT=Development
     - ASPNETCORE_URLS=http://+:80
+    hostname: userapihost
   questionapi:
     build:
       context: .
       dockerfile: QuestionAPI/Dockerfile
     ports:
-      - 4000:4000
+      - 4000:80
     environment:
     - ASPNETCORE_ENVIRONMENT=Development
     - ASPNETCORE_URLS=http://+:80
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+    hostname: questionapihost
   questionconsumer:
     build:
       context: .
       dockerfile: QuestionConsumer/Dockerfile
     ports:
-      - 5000:5000
+      - 5000:80
     environment:
     - ASPNETCORE_ENVIRONMENT=Development
     - ASPNETCORE_URLS=http://+:80
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+    hostname: questionconsumerhost
   webapp:
     build: ./web-app
     volumes:

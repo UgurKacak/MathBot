@@ -5,8 +5,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 2000
+          "Host": "authapihost",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/auths",
@@ -17,8 +17,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 3000
+          "Host": "userapihost",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/users",
@@ -33,8 +33,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 3000
+          "Host": "userapihost",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/users/{everything}",
@@ -49,8 +49,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 3000
+          "Host": "userapihost",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/users",
@@ -61,8 +61,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 4000
+          "Host": "questionapihost",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/questions",
@@ -74,6 +74,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:1000"
+    "BaseUrl": "http://apigatewayhost:1000"
   }
 }

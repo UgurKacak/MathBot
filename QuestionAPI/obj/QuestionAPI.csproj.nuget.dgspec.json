@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bee\\source\\repos\\MathBot\\QuestionAPI\\QuestionAPI.csproj": {}
+    "/Users/bee/Desktop/Personal/DotNetCoreMicroServiceSample/QuestionAPI/QuestionAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bee\\source\\repos\\MathBot\\QuestionAPI\\QuestionAPI.csproj": {
+    "/Users/bee/Desktop/Personal/DotNetCoreMicroServiceSample/QuestionAPI/QuestionAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bee\\source\\repos\\MathBot\\QuestionAPI\\QuestionAPI.csproj",
+        "projectUniqueName": "/Users/bee/Desktop/Personal/DotNetCoreMicroServiceSample/QuestionAPI/QuestionAPI.csproj",
         "projectName": "QuestionAPI",
-        "projectPath": "C:\\Users\\Bee\\source\\repos\\MathBot\\QuestionAPI\\QuestionAPI.csproj",
-        "packagesPath": "C:\\Users\\Bee\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bee\\source\\repos\\MathBot\\QuestionAPI\\obj\\",
+        "projectPath": "/Users/bee/Desktop/Personal/DotNetCoreMicroServiceSample/QuestionAPI/QuestionAPI.csproj",
+        "packagesPath": "/Users/bee/.nuget/packages/",
+        "outputPath": "/Users/bee/Desktop/Personal/DotNetCoreMicroServiceSample/QuestionAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bee\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/bee/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -91,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }

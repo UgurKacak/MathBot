@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ReactFullPageLoading from 'react-fullpage-loading';
 const SignUp = () => {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
@@ -9,6 +10,7 @@ const SignUp = () => {
 	const [password, setPassword] = useState("");
 	const [alert, setAlert] = useState("");
 	const [msg, setMsg] = useState("");
+	const [loading, setLoading] = useState(false);
 
 	const RegisterHandler = () => {
 		setAlert("");
@@ -21,22 +23,26 @@ const SignUp = () => {
 			lastName
 		};
 
+		setLoading(true);
 		axios
-			.post("https://localhost:1000/api/users", bodyParameters)
+			.post("http://localhost:1000/api/users", bodyParameters)
 			.then((response) => {
 				setMsg("Registered successfully.Please login now.");
+				setLoading(false);
 			})
 			.catch((err) => {
-				debugger;
 				if (err.response.data.title !== undefined) {
 					setAlert(err.response.data.title);
+					setLoading(false);
 				} else {
 					setAlert(err.response.data);
+					setLoading(false);
 				}
 			});
 	};
 	return (
 		<div className="outer">
+			{loading ? <ReactFullPageLoading /> : null}
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<a className="navbar-brand">MathBot</a>
 				<div className="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -54,7 +60,7 @@ const SignUp = () => {
 					</ul>
 				</div>
 			</nav>
-			<div className="inner">
+			<div className="inner" style={{marginTop:"30px"}}>
 				<h3>Register</h3>
 				<div className="alert alert-danger" role="alert" hidden={alert === "" ? true : false}>
 					{alert}
