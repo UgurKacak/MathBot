@@ -23,6 +23,7 @@ docker-compose up -d
 
 | Service | Url | Swagger |
 | ------ | ------ | ------ |
+| WebApp | [http://localhost:3005] | - |
 | ApiGateway | [http://localhost:1000] | - |
 | AuthApi | [http://localhost:2000] | - |
 | UserApi | [http://localhost:3000] | [http://localhost:3000/swagger/index.html] |
